@@ -40,6 +40,7 @@ html {
   margin: 0;
   padding: 0;
 
+
 }
 
 .pad-left {
@@ -74,7 +75,7 @@ body {
 h1,
 h2,
 p {
-  color: var(--colorletras);
+
   margin: 0;
 
 }
@@ -85,8 +86,8 @@ h2 {
 }
 
 h1 {
-  font-size: 10rem !important;
-  margin: 0 !important;
+  font-size: 10rem;
+  margin: 0;
   font-weight: 600;
 }
 
@@ -203,7 +204,7 @@ nav {
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 10rem;
+
   text-align: center;
 }
 
@@ -337,7 +338,7 @@ li {
   justify-content: center;
   display: flex;
   margin: 0 auto;
-  width: 1300px;
+  width: 100%;
 }
 
 
@@ -609,17 +610,19 @@ li {
   width: 1300px;
   display: grid;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   grid-template-rows: 40% 60%;
   height: 100vh;
   overflow: hidden;
   margin: 0 auto;
+  /* gap: 2rem; */
 }
 
 .contain-gallery-banos,
 .contain-gallery-outdoor {
   display: grid;
   grid-row: 2 / 3;
+  margin-top: 1.5rem;
 }
 
 .text-position-grid-banos,
@@ -666,10 +669,11 @@ li {
   height: 560px;
 }
 
-/* .main-card {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
+.main-card {
+  /* max-width: 1200px;
+  margin: 0 auto; */
+  /* margin-top: 2rem; */
+}
 
 .cards {
   display: flex;
@@ -796,7 +800,7 @@ hr {
 }
 
 .card_text p {
-  margin: 0 0 24px;
+  /* margin: 0 0 24px; */
   font-size: 14px;
   line-height: 1.5;
 }
@@ -809,3 +813,21 @@ hr {
 /* dos y tres */
 /* dos y tres */
 /* dos y tres */
+.box-vermas {
+  width: 100%;
+  display: inline-flex;
+  margin: 1.5rem;
+  overflow: hidden;
+
+}
+
+.vermas {
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  border-radius: 0;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: var(--fuenteextra);
+}

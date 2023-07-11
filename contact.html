@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="stylecon.css" />
+        <link rel="stylesheet" href="style.css" />
+
+        <link rel="" href="Images/" />
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+        <link rel="stylesheet" href="main.js" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Karawan</title>
+    </head>
+    <body class="bg-light">
+        <div id="section-header"></div>
+        <div class="">
+            <nav>
+                <ul class="menu-bar">
+                    <li><a href="index.html">Inicio</a></li>
+                    <!-- <li><a href="#">About Us</a></li> -->
+                    <a href="index.html"><li>Banos de Lujo</li></a>
+                    <a href="index.html"><li>Karawan Outdoor</li></a>
+                    <a href="galery.html"><li>Galeria</li></a>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <header class="page header one bg-light">
+            <div class="contain-form">
+                <div class="box-form rounded-3 shadow-lg">
+                    <div class="box-right bg-dark shadow">
+                        <div class="text-right">
+                            <h1>Contact Us</h1>
+                        </div>
+                        <div class="sub-text-right">
+                            <div class="text-center">
+                                <h2>Telefono</h2>
+                                <p>+569 9932 1660</p>
+                            </div>
+                            <div class="text-center">
+                                <h2>Email</h2>
+                                <p>contacto@karawan.cl</p>
+                            </div>
+                            <div class="text-center">
+                                <h2>Direccion</h2>
+                                <p>Casilla 14, sucursal 26, Ciudad Empresarial Huechuraba.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="contact-form" name="contact-form" class="grid-position" action="mail.php" method="POST">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="name" class="">Nombre</label>
+                                    <input type="text" id="name" name="name" class="form-control" />
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="email" class="">Correo Electronico</label>
+                                    <input type="text" id="email" name="email" class="form-control" />
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="subject" class="">Asunto</label>
+                                    <input type="text" id="subject" name="subject" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="number" class="">Numero Telefonico</label>
+                                    <input type="number" id="number" name="email" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <label for="message">Mensaje</label>
+                                    <textarea
+                                        type="text"
+                                        id="message"
+                                        name="message"
+                                        rows="10"
+                                        class="form-control md-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Grid row-->
+                        <div class="text-center text-md-left grid-position size-button">
+                            <a
+                                class="btn btn-primary bg-dark shadow"
+                                onclick="document.getElementById('contact-form').submit();"
+                                >Enviar</a
+                            >
+                        </div>
+                        <div class="status"></div>
+                    </form>
+                </div>
+            </div>
+        </header>
+    </body>
+</html>
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        if (name == "") {
+            document.querySelector(".status").innerHTML = "Name cannot be empty";
+            return false;
+        }
+        var email = document.getElementById("email").value;
+        if (email == "") {
+            document.querySelector(".status").innerHTML = "Email cannot be empty";
+            return false;
+        } else {
+            var re =
+                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!re.test(email)) {
+                document.querySelector(".status").innerHTML = "Email format invalid";
+                return false;
+            }
+        }
+        var subject = document.getElementById("subject").value;
+        if (subject == "") {
+            document.querySelector(".status").innerHTML = "Subject cannot be empty";
+            return false;
+        }
+        var message = document.getElementById("message").value;
+        if (message == "") {
+            document.querySelector(".status").innerHTML = "Message cannot be empty";
+            return false;
+        }
+        document.querySelector(".status").innerHTML = "Sending...";
+    }
+</script>
